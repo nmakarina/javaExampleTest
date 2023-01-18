@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Example test" parallel="tests" thread-count="1">
+
+    <listeners>
+        <listener class-name="meta.MainListener"/>
+    </listeners>
+
+    <test name="Example part 1" time-out="480000">
+        <classes>
+            <class name="ui.TestExampleUI"></class>
+
+        </classes>
+    </test>
+</suite>
