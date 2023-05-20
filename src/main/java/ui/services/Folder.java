@@ -11,19 +11,6 @@ public final class Folder {
     private static String path;
     protected static String unzipPath = System.getProperty("user.dir") + "\\unzip\\unzip";
 
-    /**public Folder createInProjectFolder() {
-        return createIn(System.getProperty("user.dir"));
-    }**/
-
-    /**public Folder createIn(String path) {
-        String pathToScr = path + "\\Screenshots\\";
-        createDir(pathToScr);
-        String pathToCurrentDateFolder = String.join("", pathToScr, LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-YYYY")), "\\");
-        createDir(pathToCurrentDateFolder);
-        Folder.path = pathToCurrentDateFolder;
-        return this;
-    }**/
-
     private void createDir(String fullPath) {
         try {
             Path path = Paths.get(fullPath);
