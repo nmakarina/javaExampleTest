@@ -77,12 +77,6 @@ public class LoginPage extends ParentPage {
         return clickSignButton();
     }
 
-    //заглушка пока не работает двухфазная авторизация
-    /**@Step("заглушка для двухфазной авторизации")
-    public MainPage signWith(String name) {
-        return new MainPage(browser);
-    }**/
-
     //универсальный метод авторизации
     public MainPage auth(String url_home, String certificate, String login, String pass) {
         //авторизация через страницу логина
@@ -95,14 +89,9 @@ public class LoginPage extends ParentPage {
 
     @Step("Авторизация пользователя с параметрами: login - {0}, password - {1}")
     public LoginPage loginWith(String login, String pass) {
-        for (int i=0;i<4;i++) {
-            if (insertLogin(login).insertPass(pass).clickLogInButton()) {
-                break;
-            }
-            //browser.pause(1);
+            insertLogin(login).insertPass(pass).clickLogInButton();
             browser.refreshPage();
             load();
-        }
             return new LoginPage(browser);
     }
 
